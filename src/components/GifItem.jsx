@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
+
 import { getGifs } from "../helpers/getGifs";
 
 export const GifItem = ({ title, url }) => {
-
   const [images, setImages] = useState([]);
 
   const getImages = async () => {
@@ -20,4 +21,9 @@ export const GifItem = ({ title, url }) => {
       <p>{title}</p>
     </div>
   );
+};
+
+GifItem.propTypes = {
+  title: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
 };
